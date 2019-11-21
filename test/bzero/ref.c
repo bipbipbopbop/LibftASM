@@ -7,11 +7,11 @@ int	main(void)
 	char	tab[20];
 
 	strcpy(tab, "abcdefghijklmnopqrs");
-	write(1, tab, 20);
+	write(STDOUT_FILENO, tab, 20);
 	bzero(tab + 10, 10);
-	write(1, tab, 20);
+	write(STDOUT_FILENO, tab, 20);
 	bzero(tab + 2, 1);
-	write(1, tab, 20);
+	write(STDOUT_FILENO, tab, 20);
 
 	return 0;
 }
