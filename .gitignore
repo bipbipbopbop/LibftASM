@@ -1,0 +1,25 @@
+# ASM gitignore:
+
+## Compiled Object files
+.bin/
+*.o
+*.obj
+
+## Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+## Compiled Static libraries
+*.a
+*.lib
+
+## Executables
+*.exe
+*.out
+
+## test output files
+*.log
+
+# Visual Code gitignore:
+.vscode
