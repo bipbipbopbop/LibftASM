@@ -34,8 +34,8 @@ do
   echo "Compilation: Done"
 
   # Testing
-  ./ref.out > ref.log
-  ./mine.out > mine.log
+  ./ref.out &> ref.log
+  ./mine.out &> mine.log
   diff ref.log mine.log
   diff ref.log mine.log > ${TEST_NAME}.log
   if [ $? -ne 0 ]; then
