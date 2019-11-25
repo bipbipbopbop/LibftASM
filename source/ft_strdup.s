@@ -10,12 +10,10 @@
 			section			.text
 _ft_strdup:
 ; rdi = PARAM s
-; rcx = length of s
 ; rax = RET ptr to new string
-; rsi = *s ptr, used for movsb
 
 			sub				rsp, 8 ; 16 byte alignment
-			push			rdi ; save *s ptr for rsi (later)
+			push			rdi ; save *s ptr for movsb op (later)
 			call			_ft_strlen
 			
 			mov				rcx, rax ; Length of s

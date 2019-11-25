@@ -9,10 +9,8 @@
 _ft_strcat:
 ; rdi = PARAM dest
 ; rsi = PARAM src
-; rcx = Length of dest before concatenation
-; r8b = tmp value
 
-			mov				rcx, -1 ; pre-incrementation for optimization
+			mov				rcx, -1 ; prepare rcx to hold strlen result
 strlen:
 			inc				rcx
 			cmp				BYTE [rdi + rcx], 0
@@ -23,7 +21,7 @@ strlen:
 cat_loop:
 			mov				BYTE r8b, [rsi]
 			mov				BYTE [rdi], r8b
-			inc				rsi ; Post-incrementation for the glory
+			inc				rsi
 			inc				rdi
 			cmp				r8b, 0
 			jne				cat_loop

@@ -10,7 +10,7 @@ _ft_bzero:
 ; rdi = PARAM s
 ; rsi = PARAM n
 
-; if n == 0, we will not do anything
+; if n == 0, we will do anything
 			test			rsi, rsi
 			jz				done
 

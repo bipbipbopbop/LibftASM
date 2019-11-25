@@ -8,15 +8,9 @@
 			section			.text
 _ft_puts:
 ; rdi = PARAM s
-; rax = RET Non-negative value on success, EOF otherwise
+; rax = RET Non-negative ('\n') value on success, EOF otherwise
 
-; syscall write:
-; rax = syscall value
-; rdi = output stream
-; rsi = string ptr
-; rdx = Nb of char to print
-
-			mov				rdx, -1 ; 3rd argument of syscall write: Nb of char to print
+			mov				rdx, -1 ; prepare rdx to hold strlen result
 			cmp				rdi, 0
 			jne				strlen
 
@@ -31,6 +25,12 @@ strlen:
 			jne				strlen
 
 core:
+; syscall write:
+; rax = syscall value
+; rdi = output stream
+; rsi = string ptr
+; rdx = Nb of char to print
+
 			mov				rax, 0x2000004 ; syscall write
 			mov				rsi, rdi ; 2nd argument: string to be print
 			mov				rdi, 1 ; 1st argument: standard output

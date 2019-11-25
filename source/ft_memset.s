@@ -8,12 +8,11 @@
 			section			.text
 _ft_memset:
 ; rdi = PARAM s
-; rsi, sil = PARAM c
+; sil = PARAM c
 ; rdx = PARAM n
-; rcx = Nb of char to set in s
 ; rax = RET s
 
-			mov				rcx, rdx
+			mov				rcx, rdx ; rcx hold 'n' value
 			mov				al, sil
 			cld
 			rep				stosb
