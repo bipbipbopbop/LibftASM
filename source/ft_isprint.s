@@ -2,7 +2,6 @@
 ;  int ft_isprint(int c);
 ;  ----------------------------------------------------------------------------------------
 
-; TO BE TESTED
 			global			_ft_isprint
 
 			section			.text
