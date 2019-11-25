@@ -36,9 +36,8 @@ do
   # Testing
   ./ref.out &> ref.log
   ./mine.out &> mine.log
-  diff ref.log mine.log
-  diff ref.log mine.log > ${TEST_NAME}.log
-  if [ $? -ne 0 ]; then
+  if ! diff ref.log mine.log > ${TEST_NAME}.log
+  then
     echo "${TEST_PATH}: Failure ; see ${TEST_NAME}.log"
   else
     echo "${TEST_PATH}: Success" ; rm ${TEST_NAME}.log
