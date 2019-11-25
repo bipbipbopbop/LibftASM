@@ -3,10 +3,10 @@
 ;  ----------------------------------------------------------------------------------------
 
 
-			global			ft_puts
+			global			_ft_puts
 
 			section			.text
-ft_puts:
+_ft_puts:
 ; rdi = PARAM s
 ; rax = RET Non-negative value on success, EOF otherwise
 
@@ -17,24 +17,33 @@ ft_puts:
 ; rdx = Nb of char to print
 
 			mov				rdx, -1 ; 3rd argument of syscall write: Nb of char to print
+			cmp				rdi, 0
+			jne				strlen
+
+			; rsi == 0, th pointer is NULL
+			lea				rdi, [rel NullStr]
+			mov				rdx, 6
+			jmp				core
+
 strlen:
 			inc				rdx
 			cmp				BYTE [rdi + rdx], 0
 			jne				strlen
 
-
-			mov				rax, 1 ; syscall for write (DIFFERENT FOR MACOS!!!)
+core:
+			mov				rax, 0x2000004 ; syscall write
 			mov				rsi, rdi ; 2nd argument: string to be print
 			mov				rdi, 1 ; 1st argument: standard output
 			syscall
 			cmp				rax, 0
 			jl				error
 
-			mov				rax, 1 ; syscall for write (DIFFERENT FOR MACOS!!!)
-			lea				rsi, [EndOfString] ; 2nd argument: string to be print
+			mov				rax, 0x2000004 ; syscall write
+			lea				rsi, [rel EndOfString] ; 2nd argument: string to be print
 			mov				rdi, 1 ; 1st argument: standard output
 			mov				rdx, 1 ; 3rd argument of syscall write: Nb of char to print
 			syscall ; write a \n
+			mov				rax, 10 ; return value
 			ret
 
 error:
@@ -43,3 +52,4 @@ error:
 			
 			section			.rodata
 EndOfString	db				0x0A
+NullStr		db				"(null)", 0

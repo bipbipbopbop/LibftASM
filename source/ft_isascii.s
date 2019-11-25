@@ -3,10 +3,10 @@
 ;  ----------------------------------------------------------------------------------------
 
 
-			global			ft_isascii
+			global			_ft_isascii
 
 			section			.text
-ft_isascii:
+_ft_isascii:
 ; rdi = PARAM c
 ; rax = RET an int (interpreted as a boolean) that tells if the character is an ascii value
 ; r8 = tmp value

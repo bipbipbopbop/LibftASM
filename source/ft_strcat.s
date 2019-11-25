@@ -3,10 +3,10 @@
 ;  ----------------------------------------------------------------------------------------
 
 
-			global			ft_strcat
+			global			_ft_strcat
 
 			section			.text
-ft_strcat:
+_ft_strcat:
 ; rdi = PARAM dest
 ; rsi = PARAM src
 ; rcx = Length of dest before concatenation

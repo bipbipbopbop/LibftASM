@@ -3,10 +3,10 @@
 ;  ----------------------------------------------------------------------------------------
 
 
-			global			ft_isdigit
+			global			_ft_isdigit
 
 			section			.text
-ft_isdigit:
+_ft_isdigit:
 ; rdi = PARAM c
 ; rax = RET an int (interpreted as a boolean) that tells if the character is a num
 

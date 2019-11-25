@@ -1,12 +1,12 @@
 ;  ----------------------------------------------------------------------------------------
-;  void ft_strlen(char *s);
+;  size_t ft_strlen(char *s);
 ;  ----------------------------------------------------------------------------------------
 
 
-			global			ft_strlen
+			global			_ft_strlen
 
 			section			.text
-ft_strlen:
+_ft_strlen:
 ; rdi = PARAM s
 ; rax = RET length of the string
 ; al = char to search ('\0')

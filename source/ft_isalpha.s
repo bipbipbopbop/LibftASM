@@ -3,10 +3,10 @@
 ;  ----------------------------------------------------------------------------------------
 
 
-			global			ft_isalpha
+			global			_ft_isalpha
 
 			section			.text
-ft_isalpha:
+_ft_isalpha:
 ; rdi = PARAM c
 ; rax = RET an int (interpreted as a boolean) that tell if the character is a letter
 

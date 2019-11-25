@@ -3,12 +3,10 @@
 ;  ----------------------------------------------------------------------------------------
 
 ; TO BE TESTED
-			global			ft_isprint
-			extern			ft_isalpha
-			extern			ft_isdigit
+			global			_ft_isprint
 
 			section			.text
-ft_isprint:
+_ft_isprint:
 ; rdi = PARAM c
 ; rax = RET an int (interpreted as a boolean) that tells if the character is printable
 

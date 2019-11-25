@@ -1,17 +1,17 @@
 ;  ----------------------------------------------------------------------------------------
-;  void ft_memset(void *s, int c, size_t n);
+;  void *ft_memset(void *s, int c, size_t n);
 ;  ----------------------------------------------------------------------------------------
 
 
-			global			ft_memset
+			global			_ft_memset
 
 			section			.text
-ft_memset:
+_ft_memset:
 ; rdi = PARAM s
 ; rsi, sil = PARAM c
 ; rdx = PARAM n
 ; rcx = Nb of char to set in s
-; rax = RET ptr to s
+; rax = RET s
 
 			mov				rcx, rdx
 			mov				al, sil

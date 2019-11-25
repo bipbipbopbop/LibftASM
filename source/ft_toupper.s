@@ -3,10 +3,10 @@
 ;  ----------------------------------------------------------------------------------------
 
 
-			global			ft_toupper
+			global			_ft_toupper
 
 			section			.text
-ft_toupper:
+_ft_toupper:
 ; rdi = PARAM c
 ; rax = RET an int (interpreted as a char) that represents:
 ;  - a uppercase letter if it is a letter,

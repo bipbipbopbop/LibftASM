@@ -3,10 +3,10 @@
 ;  ----------------------------------------------------------------------------------------
 
 
-			global			ft_tolower
+			global			_ft_tolower
 
 			section			.text
-ft_tolower:
+_ft_tolower:
 ; rdi = PARAM c
 ; rax = RET an int (interpreted as a char) that represents:
 ;  - a lowercase letter if it is a letter,

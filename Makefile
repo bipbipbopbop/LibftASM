@@ -6,7 +6,7 @@
 #    By: jhache <jhache@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/18 14:42:51 by jhache            #+#    #+#              #
-#    Updated: 2019/11/21 11:24:42 by jhache           ###   ########.fr        #
+#    Updated: 2019/11/21 16:09:26 by jhache           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJ_PATH := .bin
 
 # Compiler
 CC := nasm
-CCFLAGS := -f elf64
+CCFLAGS := -f macho64
 
 
 # Commands
