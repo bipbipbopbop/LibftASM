@@ -5,7 +5,7 @@ int ft_isprint(int c);
 int	main(void)
 {
 	int	res = 0;
-0	res |= (ft_isprint('0') == 0);
+	res |= (ft_isprint('0') == 0);
 	res |= (ft_isprint(']') == 0) << 1;
 	res |= (ft_isprint('7') == 0) << 2;
 	res |= (ft_isprint('O') == 0) << 3;

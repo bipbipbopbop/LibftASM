@@ -3,6 +3,7 @@
 
 int	main(void)
 {
+	setbuf(stdout, NULL);
 	printf("return value: %d\n", puts(""));
 	printf("return value: %d\n", puts("\0\0\0\0"));
 	printf("return value: %d\n", puts("test"));

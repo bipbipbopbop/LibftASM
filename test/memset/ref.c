@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include <signal.h>
 
 void	catch_segv(int dummy)
@@ -33,7 +34,7 @@ int	main(void)
 		printf("%#.2x ", str[i]);
 	putchar('\n');
 
-	memset(str, 'Z', 0);
+	memset(str, 'Z', (0));
 	puts("call to memset(str, 'Z', 0):");
 	for (int i = 0; i < 10; ++i)
 		printf("%#.2x ", str[i]);

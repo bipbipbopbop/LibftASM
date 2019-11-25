@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include <signal.h>
 
 void	catch_segv(int dummy)
@@ -24,19 +25,19 @@ int	main(void)
 	putchar('\n');
 
 	ft_memset(str, 'a', 5);
-	puts("call to ft_memset(str, 'a', 5): ");
+	puts("call to memset(str, 'a', 5): ");
 	for (int i = 0; i < 10; ++i)
 		printf("%#.2x ", str[i]);
 	putchar('\n');
 
 	ft_memset(str + 3, 'E', 4);
-	puts("call to ft_memset(str + 3, 'E', 4):");
+	puts("call to memset(str + 3, 'E', 4):");
 	for (int i = 0; i < 10; ++i)
 		printf("%#.2x ", str[i]);
 	putchar('\n');
 
 	ft_memset(str, 'Z', 0);
-	puts("call to ft_memset(str, 'Z', 0):");
+	puts("call to memset(str, 'Z', 0):");
 	for (int i = 0; i < 10; ++i)
 		printf("%#.2x ", str[i]);
 	putchar('\n');
